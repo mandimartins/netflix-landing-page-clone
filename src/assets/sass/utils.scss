@@ -1,0 +1,48 @@
+.container {
+  margin: 0 2rem;
+}
+.to-uppercase {
+  text-transform: uppercase;
+}
+
+.font-size-small {
+  font-size: 1.5rem;
+}
+
+.font-size-medium {
+  font-size: 1.8rem;
+}
+
+.font-size-big {
+  font-size: 2.5rem;
+}
+
+// Margin & padding classes
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}rem;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}rem;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+}
