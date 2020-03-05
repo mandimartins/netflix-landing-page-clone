@@ -2,13 +2,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include respond(medium-size) {
+    flex-direction: row;
+    margin: 2rem 0;
+  }
 
   &__input {
     margin: 0.5rem;
     border: none;
     font-size: 1.5rem;
     height: 3rem;
-    border-radius: 0.2rem;
+    border-radius: 0.1rem;
     padding: 1rem;
+    flex-grow: 1;
   }
 }

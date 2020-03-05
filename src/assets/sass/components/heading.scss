@@ -1,9 +1,16 @@
 .heading {
+  @include respond(medium-size) {
+    max-width: 60rem;
+  }
   &__title {
     color: #ffffff;
     font-weight: bold;
     font-size: 2.9rem;
     text-align: center;
+
+    @include respond(small-size) {
+      font-size: 4rem;
+    }
   }
 
   &__subtitle {
