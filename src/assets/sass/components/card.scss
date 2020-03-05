@@ -1,0 +1,14 @@
+.card {
+  background: linear-gradient(to top, rgba(0, 0, 0, 6), rgba(0, 0, 0, 0.7));
+  padding: 1rem;
+  border-radius: 0.8rem;
+  &__title {
+    color: #ffff;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  &__body {
+    margin-top: 1rem;
+  }
+}
