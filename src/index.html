@@ -4,11 +4,59 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>HTML- Basic file</title>
-    <meta name="description" content="Basic HTML file structure." />
-    <meta name="author" content="someone" />
+    <title>
+      Netflix Brasil - assistir a séries online, assistir a filmes online
+    </title>
+    <meta
+      property="description"
+      content="Assista a séries e filmes online diretamente na sua smart TV, PC ou Mac, videogame, tablet, smartphone e mais."
+    />
+    <meta name="author" content="Fulano de tal" />
   </head>
   <body>
-    <h1>Test</h1>
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <div class="logo">
+            />
+          </div>
+          <button class="button button--red font-size-small">Entrar</button>
+        </div>
+        <div class="header-story ">
+          <div class="heading mt-5">
+            <h1 class="heading__title">
+              Filmes, séries e muito mais. Sem limites.
+            </h1>
+            <p class="heading__subtitle">
+              Assista onde quiser. Cancele quando quiser.
+            </p>
+          </div>
+
+          <div class="header-story-signup">
+            <div class="card mt-2">
+              <div class="card__title">
+                Pronto para assistir? Informe seu email e senha para criar ou
+                reiniciar a assinatura.
+              </div>
+              <div class="card__body">
+                <form class="form" action="#">
+                  <input class="form__input" type="Email" placeholder="Email" />
+                  <input
+                    class="form__input"
+                    type="password"
+                    placeholder="Password"
+                  />
+                </form>
+              </div>
+            </div>
+            <button
+              class=" button button-custom  button--red mt-1 mb-5 font-size-medium to-uppercase "
+            >
+              Experimente já
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
   </body>
 </html>

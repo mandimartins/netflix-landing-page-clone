@@ -1,0 +1,48 @@
+.header {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('../images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond(medium-size) {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.logo {
+  width: 11rem;
+  height: 6rem;
+  background-image: url('../images/logo.png');
+  background-size: cover;
+  @include respond(small-size) {
+    width: 13rem;
+    height: 8rem;
+  }
+}
+
+.header-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-signup {
+    max-width: 45rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include respond(medium-size) {
+      max-width: 82rem;
+    }
+  }
+}

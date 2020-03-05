@@ -1,11 +1,4 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
+@import './mixins.scss';
 @import './typography.scss';
 
 @import './components/heading.scss';
@@ -14,5 +7,12 @@
 @import './components/form.scss';
 
 @import './layout.scss';
-
 @import './utils.scss';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
