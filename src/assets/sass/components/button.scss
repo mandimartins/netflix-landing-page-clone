@@ -1,15 +1,16 @@
 .button {
   border: none;
   border-radius: 0.3rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
+
+  &-custom {
+    padding: 1rem 5rem;
+  }
   &--red {
     background-color: #e50914;
-  }
-  &--large {
-    width: 100%;
   }
 }
