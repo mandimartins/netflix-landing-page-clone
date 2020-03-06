@@ -1,6 +1,7 @@
 .container {
   margin: 0 2rem;
 }
+
 .to-uppercase {
   text-transform: uppercase;
 }
@@ -16,7 +17,9 @@
 .font-size-big {
   font-size: 2.5rem;
 }
-
+.border-bottom {
+  border-bottom: 8px solid #222;
+}
 // Margin & padding classes
 $spaceamounts: (1, 2, 3, 4, 5);
 

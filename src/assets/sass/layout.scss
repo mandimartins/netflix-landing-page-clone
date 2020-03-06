@@ -46,3 +46,47 @@
     }
   }
 }
+
+.watch-on-tv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(medium-size) {
+    flex-direction: row;
+  }
+
+  &__animation-card {
+    position: relative;
+    height: 35rem;
+  }
+  &__image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+  &__video-container {
+    width: 85%;
+    margin-left: 3.5rem;
+    margin-top: 4.2rem;
+    @include respond(small-size) {
+      width: 80%;
+      margin-top: 5.5rem;
+      margin-left: 5rem;
+    }
+  }
+  &__video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.images {
+  width: 100%;
+  object-fit: cover;
+}
