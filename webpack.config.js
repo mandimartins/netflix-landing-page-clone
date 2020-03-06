@@ -1,18 +1,38 @@
-const devMode = process.env.NODE_ENV === 'development';
+const modoDev = process.env.NODE_ENV !== 'production';
+
+const express = require('express');
 
 const path = require('path');
-
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
-
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let config = {
+  mode: modoDev ? 'development' : 'production',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
+  },
+  devServer: {
+    contentBase: './public',
+    port: 3000,
+    before(app) {
+      app.use(
+        '/assets/uploads',
+        express.static(path.resolve(__dirname, 'public'))
+      );
+    }
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -33,11 +53,7 @@ let config = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -51,16 +67,6 @@ let config = {
         ]
       }
     ]
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
-    open: true
   }
 };
 module.exports = config;
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.plugins.push(
-    new OptimizeCSSAssets() // call the css optimizer (minification)
-  );
-}
